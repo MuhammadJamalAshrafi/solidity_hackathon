@@ -35,7 +35,7 @@ contract PatientDataManagementSystem {
         _;
     }
 
-    event logData(string message, address);
+    event logActivity(string message, address);
 
     function patientEnrollment(
          address _patientID,
@@ -54,7 +54,7 @@ contract PatientDataManagementSystem {
         patientID.push(_patientID);
         patientsEnrolled++;
 
-        emit logData ("New patient has been successfully enrolled with a patient ID:", _patientID);        
+        emit logActivity ("New patient has been successfully enrolled with a patient ID:", _patientID);        
     }
 
     function totalPatients() public view onlyDataAnalyst onlyHealthCarePolicyMaker returns (uint){
